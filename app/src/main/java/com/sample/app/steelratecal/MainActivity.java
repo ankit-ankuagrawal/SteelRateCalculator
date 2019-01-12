@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.text.DecimalFormat;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements TextWatcher {
@@ -47,19 +49,25 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
 
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
-        basicPrice = 0;
-        if (!TextUtils.isEmpty(s)) {
-            basicPrice = Double.valueOf(s.toString());
-        }
+        try {
+            basicPrice = 0;
+            if (!TextUtils.isEmpty(s)) {
+                basicPrice = Double.valueOf(s.toString());
+            }
 
-        interest14 = calInterest(basicPrice, FOURTEEN_RATE_OF_INTEREST);
-        interest18 = calInterest(basicPrice, EIGHTEEN_RATE_OF_INTEREST);
-        total14 = calTotal(basicPrice, interest14);
-        total18 = calTotal(basicPrice, interest18);
-        tv14.setText(String.valueOf(interest14));
-        tv14Total.setText(String.valueOf(total14));
-        tv18.setText(String.valueOf(interest18));
-        tv18Total.setText(String.valueOf(total18));
+            interest14 = calInterest(basicPrice, FOURTEEN_RATE_OF_INTEREST);
+            interest18 = calInterest(basicPrice, EIGHTEEN_RATE_OF_INTEREST);
+            total14 = calTotal(basicPrice, interest14);
+            total18 = calTotal(basicPrice, interest18);
+            tv14.setText(formatUpto2Decimal(interest14));
+            tv14Total.setText(formatUpto2Decimal(total14));
+            tv18.setText(formatUpto2Decimal(interest18));
+            tv18Total.setText(formatUpto2Decimal(total18));
+
+
+        } catch (NumberFormatException e) {
+
+        }
     }
 
     @Override
@@ -69,6 +77,10 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
 
     private double calInterest(double basicPrice, float rateOfInterest) {
         return (basicPrice * rateOfInterest) / 100;
+    }
+
+    private String formatUpto2Decimal(double price) {
+        return new DecimalFormat("##.##").format(price);
     }
 
     private double calTotal(double basicPrice, double calculatedInterest) {
