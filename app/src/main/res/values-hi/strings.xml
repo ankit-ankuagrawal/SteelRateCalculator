@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">स्टील दर कैलकुलेटर</string>
-    <string name="basic_price">मूल क़ीमत</string>
+    <string name="basic_price">मूल दर</string>
     <string name="percent_14">१४%</string>
     <string name="percent_18">१८%</string>
     <string name="total">पूरा</string>
+
+    <!--Strings are added in 1.1-->
+    <string name="rate_difference">दर अंतर</string>
+    <string name="transport">अन्य खर्चे (टैक्स नहीं)</string>
 </resources>

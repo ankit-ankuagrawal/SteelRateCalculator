@@ -11,7 +11,7 @@
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="6dp"
         android:hint="@string/basic_price"
         android:paddingLeft="12dp"
         android:paddingRight="12dp">
@@ -21,12 +21,60 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_currency_inr"
+            android:drawableStart="@drawable/ic_currency_inr"
+            android:drawableEnd="@drawable/ic_baseline_cancel_24px"
+            android:drawableRight="@drawable/ic_baseline_cancel_24px"
             android:inputType="numberDecimal"
             android:paddingLeft="12dp"
             android:paddingRight="12dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="6dp"
+        android:hint="@string/rate_difference"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etRateDifference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_currency_inr"
+            android:drawableStart="@drawable/ic_currency_inr"
+            android:drawableEnd="@drawable/ic_baseline_cancel_24px"
+            android:drawableRight="@drawable/ic_baseline_cancel_24px"
+            android:inputType="numberDecimal"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="6dp"
+        android:hint="@string/transport"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTransport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_currency_inr"
+            android:drawableStart="@drawable/ic_currency_inr"
+            android:drawableEnd="@drawable/ic_baseline_cancel_24px"
+            android:drawableRight="@drawable/ic_baseline_cancel_24px"
+            android:inputType="numberDecimal"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         android:layout_width="280dp"
@@ -60,7 +108,7 @@
                 android:layout_weight="0.5"
                 android:drawableRight="@drawable/ic_currency_inr"
                 android:gravity="end"
-                android:text="0.0"
+                android:text="@string/zero_value"
                 android:textSize="20dp" />
         </LinearLayout>
 
@@ -86,7 +134,7 @@
                 android:layout_weight="0.5"
                 android:drawableRight="@drawable/ic_currency_inr"
                 android:gravity="end"
-                android:text="0.0"
+                android:text="@string/zero_value"
                 android:textSize="20dp" />
         </LinearLayout>
     </LinearLayout>
@@ -123,7 +171,7 @@
                 android:layout_weight="0.5"
                 android:drawableRight="@drawable/ic_currency_inr"
                 android:gravity="end"
-                android:text="0.0"
+                android:text="@string/zero_value"
                 android:textSize="20dp" />
         </LinearLayout>
 
@@ -149,9 +197,8 @@
                 android:layout_weight="0.5"
                 android:drawableRight="@drawable/ic_currency_inr"
                 android:gravity="end"
-                android:text="0.0"
+                android:text="@string/zero_value"
                 android:textSize="20dp" />
         </LinearLayout>
     </LinearLayout>
-
 </LinearLayout>
